@@ -1,0 +1,70 @@
+body {
+    min-width: 350px;
+	min-height:250px;
+    margin: 0; 
+	font:12px Arial;
+    width: auto;
+	color:#080808;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    height: 28px;
+    padding: 5px;
+	font:15px Times;
+    outline: none;
+    line-height: 18px;
+    border-color: #000;
+    overflow: hidden;
+    word-wrap: break-word
+}
+
+h1 {
+    text-align: center;
+    margin: 3em auto;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+
+section {
+    padding: 10px;
+    min-height: 150px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+span {
+    color: grey;
+}
+
+img[alt = "pron"] {
+    vertical-align:middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+img[alt = "add"] {
+    width: 30px;
+    height: 30px;
+	float:right;
+	margin-right:5px;
+   
+}
+
+footer{
+position:absolute;
+right:5px;
+bottom:5px
+}
+
