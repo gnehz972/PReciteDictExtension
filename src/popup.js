@@ -8,7 +8,7 @@
 
 var searchbox = document.querySelector('textarea'),
     content = document.querySelector('section'),
-    dictApi = 'bing',
+    dictApi = 'powerword',
     data;
 
 
@@ -22,10 +22,10 @@ function parseResult(data) {
     var str = '', i, len;
     str += '<h2>' + data.key + '</h2>';
     if (data.pron) {
-        str += '<img src="' + '/assets/pron.png' + '" alt = ' + '"pron"' + '"><audio src="' + data.pron + '"></audio>';
+        str += '<img src="' + '/assets/sound_blue.png' + '" alt = ' + '"pron"' + '"><audio src="' + data.pron + '"></audio>';
     }
     if (data.tt[0].acceptation != '查询不到结果')
-        str += '<img src="' + '/assets/add.png' + '" alt = ' + '"add"/>';
+        str += '<img src="' + '/assets/add_new.png' + '" alt = ' + '"add"/>';
     if (data.ps) {
         str += '<p alt = "ps"><span>[ ' + data.ps + ' ]</span></p>';
     }

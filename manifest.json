@@ -1,20 +1,36 @@
 ﻿{
-    "manifest_version":2,
-    "name":"P词典",
-    "description":"P词典(Personal Recite Dict),可添加生词本的英语辞典",
-    "permissions":[ "tabs", "contextMenus", "*://*/*" ],
-    "version":"1.1",
-    "icons":{
-        "128":"assets/icon128.png",
-        "16":"assets/icon16.png",
-        "48":"assets/icon48.png"
+  "manifest_version": 2,
+  "name": "P词典",
+  "description": "P词典(Personal Recite Dict),可添加生词本的英语辞典",
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "*://*/*"
+  ],
+  "version": "1.3",
+  "icons": {
+    "16": "assets/logo_16.png",
+    "32": "assets/logo_32.png",
+    "48": "assets/logo_48.png",
+    "128": "assets/logo_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/logo_16.png",
+      "32": "assets/logo_32.png",
+      "48": "assets/logo_48.png",
+      "128": "assets/logo_128.png"
     },
-    "browser_action":{
-        "default_icon":"assets/icon19.png",
-        "default_popup":"pages/popup.html"
-    },
-    "background":{
-        "scripts":[ "src/zepto.min.js", "src/oop.js", "src/dict.js", "src/background.js" ]
-    },
-    "options_page":"pages/options.html"
+    "default_popup": "pages/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "src/zepto.min.js",
+      "src/oop.js",
+      "src/dict.js",
+      "src/background.js"
+    ],
+    "persistent": false
+  },
+  "options_page": "pages/options.html"
 }

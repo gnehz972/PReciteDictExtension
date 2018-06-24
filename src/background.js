@@ -32,6 +32,7 @@ function delWord(word) {
 
         }, function (err) {
             console.log(err);
+            
         }
     )
 }
