@@ -5,6 +5,9 @@ The result can be retained for future review and studying, and exported as txt i
 The dict API is provided by
 [iciba open platform](https://open.iciba.com/index.php?c=wiki&t=cc),
 #### Overview
+Pls try it in chrome web store [P词典](https://chrome.google.com/webstore/detail/bchghhkcoamecpkkkdbkfjgcdfjcnmka?authuser=0&hl=en)
+![image1](./pic/intro_1.png) 
+![image2](./pic/intro_2.png)
 #### Tech
 - Chrome extension
 - Typescript
