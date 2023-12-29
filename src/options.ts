@@ -44,6 +44,7 @@ const addWordRow = (word: Word) => {
     row.insertCell().innerHTML = word.ps;
     const explain = word.explain.map(it => it.part + it.means.join(";")).join("<br/>")
     row.insertCell().innerHTML = explain;
+    row.insertCell().innerHTML = null;
 }
 
 const deleteSelected = async () => {

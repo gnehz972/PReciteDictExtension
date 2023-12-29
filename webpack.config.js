@@ -1,5 +1,6 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+
 
 module.exports = {
     mode: "production",
@@ -24,13 +25,17 @@ module.exports = {
         ],
     },
     plugins: [
-        new CopyPlugin({
-            patterns: [
-                {from: "./pages/", to: path.join(__dirname, "./dist/pages/")},
-                {from: "./assets/", to: path.join(__dirname, "./dist/assets/")},
-                {from: "./js/", to: path.join(__dirname, "./dist/js/")},
-                {from: "./manifest.json", to: path.join(__dirname, "./dist/manifest.json")},
-            ]
+        new FileManagerPlugin({
+            events: {
+                onEnd: {
+                    copy: [
+                        {source: './pages/', destination: path.join(__dirname, "./dist/pages/")},
+                        {source: './assets/', destination: path.join(__dirname, "./dist/assets/")},
+                        {source: './js/', destination: path.join(__dirname, "./dist/js/")},
+                        {source: './manifest.json', destination: path.join(__dirname, "./dist/manifest.json")},
+                    ]
+                }
+            }
         }),
     ]
 };

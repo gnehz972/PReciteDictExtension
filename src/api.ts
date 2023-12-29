@@ -46,6 +46,9 @@ const query = async (name: string): Promise<CibaResponse> => {
 export const queryWord = async (name: string): Promise<Word> => {
     return query(name)
         .then(response => {
+            if(!response.word_name) {
+                throw new Error(`Query error! Definition for ${name} not found`);
+            }
             let symbol = response.symbols[0]
             if (symbol) {
                 return {

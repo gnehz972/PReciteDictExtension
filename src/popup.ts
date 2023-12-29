@@ -23,10 +23,6 @@ const assembleSearchResult = (word: Word) => {
         str += `<p alt ="trans"><span>${word.explain[i].part}</span>${word.explain[i].means}</p>`;
     }
 
-    if (word.explain.length == 0) {
-        str += `<p>查询不到结果</p>`;
-    }
-
     return str;
 }
 
@@ -42,25 +38,28 @@ const debounce = (fn: Function, ms = 500) => {
 };
 
 const queryAndShow = async (search: string) => {
-    content.innerHTML = '<h1>processing...</h1>';
-    const word = await queryWord(search)
-    content.innerHTML = assembleSearchResult(word);
-    document.getElementById("play")?.addEventListener("click", () => {
-        (document.getElementById("pron") as HTMLAudioElement).play()
-    })
-    document.getElementById("add").addEventListener("click", async () => {
-        await save(word);
-        (document.getElementById("add") as HTMLImageElement).src = "/assets/added.png";
-    })
+    if (search) {
+        content.innerHTML = '<h1>processing...</h1>';
+        const word = await queryWord(search).catch( e => {
+            content.innerHTML = `<p>查询不到结果</p>`
+            throw e
+        })
+        content.innerHTML = assembleSearchResult(word);
+        document.getElementById("play")?.addEventListener("click", () => {
+            (document.getElementById("pron") as HTMLAudioElement).play()
+        })
+        document.getElementById("add").addEventListener("click", async () => {
+            await save(word);
+            (document.getElementById("add") as HTMLImageElement).src = "/assets/added.png";
+        })
+    } else {
+        content.innerHTML = '<h1>└(^o^)┘</h1>';
+        content.style.height = '28px';
+    }
 }
 
 searchBox.focus();
 searchBox.addEventListener("input", async (e) => {
     const search = searchBox.value.trim()
-    if (search) {
-        debounce(queryAndShow)(search)
-    } else {
-        content.innerHTML = '<h1>└(^o^)┘</h1>';
-        content.style.height = '28px';
-    }
+    debounce(queryAndShow)(search)
 });
