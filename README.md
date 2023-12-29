@@ -1,7 +1,7 @@
-P Dict 
-Chrome dict extension to query word from dict quickly while working or studying.
-The query result will show in the popup, including the short explain and pronunciation.
-The result can be retained for future review and studying, and exported as txt in the format of ciba.
+# PReciteDict  
+A Chrome extension to query word from online dict quickly while working or studying.  
+The query result include a concise explain, the pronunciation, and it can be saved and exported as txt in the format of ciba.
+
 The dict API is provided by
 [iciba open platform](https://open.iciba.com/index.php?c=wiki&t=cc),
 #### Overview

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "P词典",
   "description": "P词典(Personal Recite Dict),可添加生词本的英语辞典",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "action": {
     "default_popup": "pages/popup.html",
     "default_icon": "assets/logo_128.png"
